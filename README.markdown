@@ -1,7 +1,7 @@
 Get Cities
 ========
 
-This is a simple PHP script to retrieve book data from **IBGE** website.
+This is a simple PHP script to retrieve city data from **IBGE** website.
 This script relies on PHP DOM classes and was only tested in UNIX environment with  **PHP >= 5.3**
 
 There are three classes:
