@@ -147,6 +147,3 @@ class CityRetriever {
   }
 
 }
-
-$city = new CityRetriever('ac');
-print_r($city->findAll());
