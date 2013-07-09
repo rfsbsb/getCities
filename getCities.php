@@ -128,6 +128,18 @@ class City {
     return $all;
   }
 
+  function getByName($name) {
+    $cities = $this->getAll();
+    $results = array();
+    foreach ($cities['cities'] as $code => $city) {
+      $cityName = strtolower($city['name']);
+      if (strstr(strtolower($name), $cityName)) {
+        $results[$code] = $city;
+      }
+    }
+    return $results;
+  }
+
 }
 
 class CityRetriever {
@@ -141,9 +153,14 @@ class CityRetriever {
     }
   }
 
-  function findAll($state = "ac") {
+  function findAll() {
     $city = new City($this->dom);
     return $city->getAll();
+  }
+
+  function findByCityName($cityName = "") {
+    $city = new City($this->dom);
+    return $city->getByName($cityName);
   }
 
 }
